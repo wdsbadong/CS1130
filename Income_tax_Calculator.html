@@ -1,0 +1,78 @@
+ <!doctype html>
+<html>
+<head>
+<title>My Income tax Calculator</title>
+</head>
+<style>
+    body {
+         background-image:url('https://wallpapertag.com/wallpaper/full/8/3/c/626998-popular-stacks-of-money-wallpaper-3000x2000-laptop.jpg');
+    }
+
+    h1 {
+         border: 5px solid black;
+         background-color: #9A7B4D;
+    }
+
+    h2 {
+         border: 5px solid black;
+         background-color: #9A7B4D;
+    }
+
+	table {
+         border: 3px solid black;
+         background-color: lightgray;    
+	}
+
+</style>
+<body>
+<h1><center>My Income tax Calculator</center></h1>
+
+<h2><center>
+Income  Tax = Basic tax + Rate<br>
+<br>
+BIR
+</center></h2>
+<br>
+<center>
+<table>
+<tr>
+<th>
+<label for="InputIncome">Enter Taxable Income</label>
+<input type="numbers" id="InputIncome" placeholder="Enter Tax">
+<button onclick="CalculateTax()">CalculateTax</button>
+<br>
+<p id="result"></p>
+<br>
+</th>
+</tr>
+</table>
+</center>
+<script>
+function CalculateTax() {
+    const income = parseFloat(document.getElementById("InputIncome").value);
+	let tax = 0;
+	
+	if (income <= 250000) {
+	tax = 0;}
+	else if (income <= 400000) {
+	tax = (income - 250000) * 0.20;}
+	else if (income <= 800000) {
+	tax = 30000 + (income - 400000) * 0.25; }
+	else if (income <= 2000000) {
+	tax = 130000 + (income - 800000) * 0.30; }
+	else if (income <= 8000000) {
+	tax = 490000 + (income - 2000000) * 0.32; }
+	else if (income > 8000000) {
+	tax = 2410000 + (income - 8000000) * 0.35; }
+	
+	document.getElementById("result").innerText = `Income Tax: ${tax.toFixed(2)}`;
+}
+</script>
+<center><table border="3%" height="80%" bgcolor="lightgray">
+<br>
+<tr>
+<th><a href="sayhello.html">Back to Home Page</a></th>
+</tr>
+</table></center>
+</body>
+</html>
