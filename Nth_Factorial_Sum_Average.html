@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<title>The Nth Factorial</title>
+</head>
+<style>
+	body {
+	background-image:url(https://wallpapercave.com/wp/wp2631120.jpg);}
+</style>
+<body>
+<center>
+<table border="3%" width="auto" height="auto" bgcolor="lightgray" bordercolor="black">
+<tr>
+<th>
+<h2><center>Calculate Factorial, Sum and Average</center></h2>
+</th>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<table border="3% width="auto" height="auto" bgcolor="lightgray" bordercolor="black">
+<tr>
+<th>
+<label for="inputnumber"><center>Enter Number</center></label>
+<input type="number" id="inputnumber">
+<button onclick="calculate()"><center>Calculate</center></button>
+<p id="factorialresult"></p>
+<p id="SumResult"></p>
+<p id="AverageResult"></p>
+<br><br>
+<script>
+
+        //The nth factorial (Using a While Loop)
+
+    function calculate()  {
+
+        var n = (document.getElementById("inputnumber").value);
+        var a = 1;
+        var factorial = 1;
+
+        while (a <= n) {
+            factorial *= a;
+            a++;
+}
+document.getElementById("factorialresult").innerHTML = "Factorial:" + factorial;
+
+        //The sum of the first n numbers (Using a Do While Loop)
+
+        var sum = 0
+		var i = 1
+		
+		do {
+		sum += i;
+		i++;
+		}
+		while (i<=n);
+		
+document.getElementById("SumResult").innerHTML = "Sum:" + sum;
+
+        //The Average of the first n numbers (Using a For Loop)
+		
+		var AverageSum = 0;
+		
+		for (
+		var j = 1; j <= n; j++)
+		{
+		AverageSum += j;
+		}
+		
+		var average = AverageSum / n;
+document.getElementById("AverageResult").innerHTML = "Average of the first numbers is:" + average;
+}
+</script>
+<a href="sayhello.html">Back to Home Page</a>
+</th>
+</tr>
+</table>
+</center>
+</body>
+</html>
