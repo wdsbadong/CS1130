@@ -94,6 +94,14 @@ function Add() {
 	const hourswork = parseFloat(document.getElementById("hourswork").value);
 	const rate = parseFloat(document.getElementById("rate").value);
 	const deduction = parseFloat(document.getElementById("deduction").value);
+
+        if (employeename && hourswork && rate && deduction) {
+        // ... (rest of the code remains the same)
+
+    } else {
+        alert("Please fill in all the information!");
+    }
+	
 	
 	const Grosspay = hourswork * rate;
 	const Netpay = Grosspay - deduction;
